@@ -1,4 +1,6 @@
-﻿using Tahzoo.SeleniumCode.Samples;
+﻿using System;
+using Tahzoo.SeleniumCode.Properties;
+using Tahzoo.SeleniumCode.Samples;
 
 namespace Tahzoo.SeleniumCode
 {
@@ -8,7 +10,7 @@ namespace Tahzoo.SeleniumCode
         {
             GoogleSuggest.Search4Cheese();
 
-            var urlOfCheeseSelectorPage = "http://localhost/HTMLsamples/cheesSelector.html";
+            var urlOfCheeseSelectorPage = String.Format("http://{0}/cheesSelector.html", Settings.Default.hostname);
             new CheeseSelector().SelectCheese(urlOfCheeseSelectorPage);
 
             new CheeseSelector().SelectEdamCheese(urlOfCheeseSelectorPage);
