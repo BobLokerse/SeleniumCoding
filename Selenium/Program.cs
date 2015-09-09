@@ -8,12 +8,19 @@ namespace Tahzoo.SeleniumCode
     {
         static void Main(string[] args)
         {
-            GoogleSuggest.Search4Cheese();
+            CallSeleniumSamples();
+        }
 
-            var urlOfCheeseSelectorPage = String.Format("http://{0}/cheesSelector.html", Settings.Default.hostname);
-            new CheeseSelector().SelectCheese(urlOfCheeseSelectorPage);
+        private static void CallSeleniumSamples()
+        {
+            //GoogleSuggest.Search4Cheese();
 
-            new CheeseSelector().SelectEdamCheese(urlOfCheeseSelectorPage);
+            var urlOfCheeseSelectorPage = String.Format("http://{0}/Pages/cheeseSelector.html", Settings.Default.hostname);
+            //new CheeseSelector().SelectCheese(urlOfCheeseSelectorPage);
+
+            //new CheeseSelector().SelectEdamCheese(urlOfCheeseSelectorPage);
+
+            new CheeseSelector().GoSomewhere(urlOfCheeseSelectorPage);
         }
     }
 }

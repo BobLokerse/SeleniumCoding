@@ -27,6 +27,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SampleWeb", "http://localho
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tooling", "Tooling", "{3A8DFFBA-0DD1-42D9-BE86-D8556B1FD72F}"
+	ProjectSection(SolutionItems) = preProject
+		Tooling\addWebsiteToHosts.bat = Tooling\addWebsiteToHosts.bat
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
