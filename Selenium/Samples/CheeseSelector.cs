@@ -81,26 +81,5 @@ namespace Tahzoo.SeleniumCode.Samples
                 _driver.Quit();
             }
         }
-
-        public void GoSomewhere(string url)
-        {
-            try
-            {
-                _driver = new FirefoxDriver();
-
-                _driver.Navigate().GoToUrl(url);
-
-                _driver.SwitchTo().Window("windowName");
-            }
-            catch (System.Exception ex)
-            {
-                Console.WriteLine("An exception occured: " + ex.Message);
-                Debug.WriteLine("An exception occured: " + ex.Message);
-            }
-            finally
-            {
-                _driver.Quit();
-            }
-        }
     }
 }

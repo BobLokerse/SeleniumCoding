@@ -20,7 +20,8 @@ namespace Tahzoo.SeleniumCode
 
             //new CheeseSelector().SelectEdamCheese(urlOfCheeseSelectorPage);
 
-            new CheeseSelector().GoSomewhere(urlOfCheeseSelectorPage);
+            var urlOfCheeseLocatorPage = String.Format("http://{0}/Pages/cheeseLocator.html", Settings.Default.hostname);
+            new CheeseLocator().WhereIsMyCheese(urlOfCheeseLocatorPage);
         }
     }
 }
