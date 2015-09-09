@@ -1,0 +1,2 @@
+C:\Users\blokerse\Documents\GitHub\Selenium\Selenium\bin\Debug\Selenium.exe.config
+C:\Users\blokerse\Documents\GitHub\SeleniumCoding\Selenium\bin\Debug\Selenium.exe.config
