@@ -2,11 +2,10 @@
 using System.Diagnostics;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
-
-// Requires reference to WebDriver.Support.dll
 using OpenQA.Selenium.Support.UI;
+// Requires reference to WebDriver.Support.dll
 
-namespace Tahzoo.SeleniumCode
+namespace Tahzoo.SeleniumCode.Samples
 {
     public class GoogleSuggest
     {
@@ -40,7 +39,7 @@ namespace Tahzoo.SeleniumCode
             // Google's search is rendered dynamically with JavaScript.
             // Wait for the page to load, timeout after 10 seconds
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            wait.Until((d) => { return d.Title.ToLower().StartsWith("cheese"); });
+            wait.Until(d => d.Title.ToLower().StartsWith("cheese"));
 
             // Should see: "Cheese - Google Search"
             System.Console.WriteLine("Page title is: " + driver.Title);

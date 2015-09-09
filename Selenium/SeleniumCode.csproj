@@ -50,8 +50,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CheeseSelector.cs" />
-    <Compile Include="Googlesuggest.cs" />
+    <Compile Include="Samples\CheeseSelector.cs" />
+    <Compile Include="Samples\Googlesuggest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

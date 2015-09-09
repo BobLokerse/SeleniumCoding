@@ -1,4 +1,6 @@
-﻿namespace Tahzoo.SeleniumCode
+﻿using Tahzoo.SeleniumCode.Samples;
+
+namespace Tahzoo.SeleniumCode
 {
     class Program
     {
