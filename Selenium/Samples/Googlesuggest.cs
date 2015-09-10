@@ -9,7 +9,7 @@ namespace Tahzoo.SeleniumCode.Samples
 {
     public class GoogleSuggest
     {
-        public static void Search4Cheese()
+        public static string Search4Cheese()
         {
             // Create a new instance of the Firefox driver.
 
@@ -42,11 +42,14 @@ namespace Tahzoo.SeleniumCode.Samples
             wait.Until(d => d.Title.ToLower().StartsWith("cheese"));
 
             // Should see: "Cheese - Google Search"
-            System.Console.WriteLine("Page title is: " + driver.Title);
-            Debug.WriteLine("Page title is: " + driver.Title);
+            string result = driver.Title;
+            System.Console.WriteLine("Page title is: " + result);
+            Debug.WriteLine("Page title is: " + result);
 
             //Close the browser
             driver.Quit();
+
+            return result;
         }
     }
 }

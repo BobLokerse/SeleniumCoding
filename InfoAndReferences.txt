@@ -1,0 +1,9 @@
+http://gojko.net/fitnesse
+http://www.codeproject.com/Articles/21968/An-Introduction-to-Fit-and-Fitnesse
+
+http://www.fitnesse.org/FitNesse.DotNet.DotNetFitServer
+NuGet package FitSharp
+
+NuGet package (Selenium) WebDriver & WebDrier.Support
+
+
