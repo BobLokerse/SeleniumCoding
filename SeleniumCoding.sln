@@ -41,6 +41,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumCode_Tests", "Selen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumCode", "SeleniumCode\SeleniumCode.csproj", "{0C3AE6AE-5F0C-4941-BCD5-7CFF3B27BC4E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FitnesseApps", "FitnesseApps", "{FEFA4169-F6EE-45D7-8F11-03AFCDCBACFF}"
+	ProjectSection(SolutionItems) = preProject
+		Tooling\FitnesseApps\fitnesse-standalone.jar = Tooling\FitnesseApps\fitnesse-standalone.jar
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,5 +71,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FEFA4169-F6EE-45D7-8F11-03AFCDCBACFF} = {3A8DFFBA-0DD1-42D9-BE86-D8556B1FD72F}
 	EndGlobalSection
 EndGlobal
