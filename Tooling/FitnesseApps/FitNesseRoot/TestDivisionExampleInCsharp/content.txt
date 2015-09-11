@@ -1,0 +1,15 @@
+!contents -R2 -g -p -f -h
+
+!define COMMAND_PATTERN {%m -r fitnesse.fitserver.FitServer,dotnet4\fit.dll %p}
+!define TEST_RUNNER {dotnet4\Runner.exe}
+
+!path C:\Fitnesse.Fixtures\FitnesseTutorial.dll
+from C:\Apps\FitnesseApps\Tests\DivisionExample.csharp\FitnesseFixtureExampleDivision\Division\bin\Debug\FitnesseTutorial.dll
+
+
+!|FitnesseTutorial.Division| 
+|numerator|denominator|quotient?|
+|10       |2          |5        |
+|12.6     |3          |4.2      |
+|100      |4          |25       |
+

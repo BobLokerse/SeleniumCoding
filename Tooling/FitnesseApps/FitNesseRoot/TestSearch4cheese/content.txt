@@ -1,0 +1,14 @@
+!contents -R2 -g -p -f -h
+
+!define COMMAND_PATTERN {%m -r fitnesse.fitserver.FitServer,dotnet4\fit.dll %p}
+!define TEST_RUNNER {dotnet4\Runner.exe}
+
+!path C:\Fitnesse.Fixtures\FitnesseFixtures.dll
+
+
+!|Tahzoo.FitnesseFixtures.FixtureSearch4Cheese|
+|SearchForCheese|Title?|
+||Cheese - Google Search|
+
+
+BobsTestPage

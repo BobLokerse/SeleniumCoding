@@ -46,7 +46,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FitnesseApps", "FitnesseApp
 		Tooling\FitnesseApps\FitLibrary-2.0.zip = Tooling\FitnesseApps\FitLibrary-2.0.zip
 		Tooling\FitnesseApps\fitnesse-standalone.jar = Tooling\FitnesseApps\fitnesse-standalone.jar
 		Tooling\FitnesseApps\fitsharp.release.2.3.net.40.zip = Tooling\FitnesseApps\fitsharp.release.2.3.net.40.zip
+		Tooling\FitnesseApps\FitNesseRoot\properties = Tooling\FitnesseApps\FitNesseRoot\properties
 		Tooling\FitnesseApps\runFitNesseDirectly.bat = Tooling\FitnesseApps\runFitNesseDirectly.bat
+		Tooling\FitnesseApps\FitNesseRoot\updateDoNotCopyOverList = Tooling\FitnesseApps\FitNesseRoot\updateDoNotCopyOverList
+		Tooling\FitnesseApps\FitNesseRoot\updateList = Tooling\FitnesseApps\FitNesseRoot\updateList
 		Tooling\FitnesseApps\webtest.jar = Tooling\FitnesseApps\webtest.jar
 	EndProjectSection
 EndProject

@@ -1,0 +1,16 @@
+!contents -R2 -g -p -f -h
+
+
+
+!define COMMAND_PATTERN {%m -r fitnesse.fitserver.FitServer,dotnet4\fit.dll %p}
+!define TEST_RUNNER {dotnet4\Runner.exe}
+
+!path C:\Users\blokerse\Documents\GitHub\SeleniumCoding\FitnesseFixtures\bin\Debug\FitnesseFixtures.dll
+
+
+!|Tahzoo.FitnesseFixtures.FixtureWhereIsMyCheese|
+|WhereIsMyCheese?|
+||
+
+
+BobsTestPage
