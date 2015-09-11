@@ -36,6 +36,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="WebDriver, Version=2.47.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.2.47.0\lib\net40\WebDriver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=2.47.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.2.47.0\lib\net40\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -54,6 +63,7 @@
     <Compile Include="Samples\CheeseLocatorTests.cs" />
     <Compile Include="Samples\CheeseSelectorTests.cs" />
     <Compile Include="Samples\GoogleSuggestTests.cs" />
+    <Compile Include="Samples\PageObjectTests\GooglePagePageObjectTest.cs" />
     <Compile Include="Samples\SeleniumServerTests.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +71,9 @@
       <Project>{0c3ae6ae-5f0c-4941-bcd5-7cff3b27bc4e}</Project>
       <Name>SeleniumCode</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
