@@ -44,6 +44,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FitnesseApps", "FitnesseApps", "{FEFA4169-F6EE-45D7-8F11-03AFCDCBACFF}"
 	ProjectSection(SolutionItems) = preProject
 		Tooling\FitnesseApps\fitnesse-standalone.jar = Tooling\FitnesseApps\fitnesse-standalone.jar
+		Tooling\FitnesseApps\runFitNesseDirectly.bat = Tooling\FitnesseApps\runFitNesseDirectly.bat
 	EndProjectSection
 EndProject
 Global
