@@ -43,8 +43,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumCode", "SeleniumCod
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FitnesseApps", "FitnesseApps", "{FEFA4169-F6EE-45D7-8F11-03AFCDCBACFF}"
 	ProjectSection(SolutionItems) = preProject
+		Tooling\FitnesseApps\FitLibrary-2.0.zip = Tooling\FitnesseApps\FitLibrary-2.0.zip
 		Tooling\FitnesseApps\fitnesse-standalone.jar = Tooling\FitnesseApps\fitnesse-standalone.jar
+		Tooling\FitnesseApps\fitsharp.release.2.3.net.40.zip = Tooling\FitnesseApps\fitsharp.release.2.3.net.40.zip
 		Tooling\FitnesseApps\runFitNesseDirectly.bat = Tooling\FitnesseApps\runFitNesseDirectly.bat
+		Tooling\FitnesseApps\webtest.jar = Tooling\FitnesseApps\webtest.jar
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotnet4", "dotnet4", "{6E8ABA1B-88B6-4356-A6B8-DE1CC594162B}"
+	ProjectSection(SolutionItems) = preProject
+		Tooling\FitnesseApps\dotnet4\Bob_says.txt = Tooling\FitnesseApps\dotnet4\Bob_says.txt
+		Tooling\FitnesseApps\dotnet4\CPLicense.txt = Tooling\FitnesseApps\dotnet4\CPLicense.txt
+		Tooling\FitnesseApps\dotnet4\dbfit.dll = Tooling\FitnesseApps\dotnet4\dbfit.dll
+		Tooling\FitnesseApps\dotnet4\dbfit.mysql.dll = Tooling\FitnesseApps\dotnet4\dbfit.mysql.dll
+		Tooling\FitnesseApps\dotnet4\dbfit.oracle.dll = Tooling\FitnesseApps\dotnet4\dbfit.oracle.dll
+		Tooling\FitnesseApps\dotnet4\dbfit.sqlserver.dll = Tooling\FitnesseApps\dotnet4\dbfit.sqlserver.dll
+		Tooling\FitnesseApps\dotnet4\dbfit.sybase.dll = Tooling\FitnesseApps\dotnet4\dbfit.sybase.dll
+		Tooling\FitnesseApps\dotnet4\fit.dll = Tooling\FitnesseApps\dotnet4\fit.dll
+		Tooling\FitnesseApps\dotnet4\fitSharp.dll = Tooling\FitnesseApps\dotnet4\fitSharp.dll
+		Tooling\FitnesseApps\dotnet4\GPLicense.txt = Tooling\FitnesseApps\dotnet4\GPLicense.txt
+		Tooling\FitnesseApps\dotnet4\Runner.exe = Tooling\FitnesseApps\dotnet4\Runner.exe
+		Tooling\FitnesseApps\dotnet4\RunnerW.exe = Tooling\FitnesseApps\dotnet4\RunnerW.exe
 	EndProjectSection
 EndProject
 Global
@@ -75,5 +94,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FEFA4169-F6EE-45D7-8F11-03AFCDCBACFF} = {3A8DFFBA-0DD1-42D9-BE86-D8556B1FD72F}
+		{6E8ABA1B-88B6-4356-A6B8-DE1CC594162B} = {FEFA4169-F6EE-45D7-8F11-03AFCDCBACFF}
 	EndGlobalSection
 EndGlobal
