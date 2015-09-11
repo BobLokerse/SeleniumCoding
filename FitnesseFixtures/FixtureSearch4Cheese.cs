@@ -1,8 +1,6 @@
-﻿using fitSharp.Fit.Model;
-using Tahzoo.SeleniumCode;
-using Tahzoo.SeleniumCode.Samples;
+﻿using Tahzoo.SeleniumCode.Samples;
 
-namespace FitnesseFixtures
+namespace Tahzoo.FitnesseFixtures
 {
     public class FixtureSearch4Cheese : fit.ColumnFixture
     {
