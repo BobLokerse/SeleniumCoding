@@ -6,3 +6,5 @@ HelloWorld
 
 TestSearch4cheese
 TestWhereIsMyCheese
+
+TestGooglePageWithPageObject

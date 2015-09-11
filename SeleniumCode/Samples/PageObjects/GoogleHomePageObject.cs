@@ -1,5 +1,7 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Support.UI;
 
 
 namespace Tahzoo.SeleniumCode.Samples.PageObjects
@@ -15,17 +17,22 @@ namespace Tahzoo.SeleniumCode.Samples.PageObjects
 
         public void SearchFor(string searchTerm, FirefoxDriver driver)
         {
-            driver.FindElementByName("q").SendKeys(searchTerm);
+            IWebElement query = driver.FindElement(By.Name("q"));
+            query.SendKeys(searchTerm);
+            query.Submit();
         }
 
-        public void ClickSearch(FirefoxDriver driver)
+        public string PageTitle(FirefoxDriver driver)
         {
-            driver.FindElementByName("btnK").Click();
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait.Until(d => d.Title.ToLower().EndsWith("search"));
+
+            return driver.Title;
         }
 
-        public void ClickFeelingLucky(FirefoxDriver driver)
+        public void Close(FirefoxDriver driver)
         {
-            driver.FindElementByName("btnI").Click();
+            driver.Close();
         }
 
     }
