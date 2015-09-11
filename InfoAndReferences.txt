@@ -4,6 +4,10 @@ http://www.codeproject.com/Articles/21968/An-Introduction-to-Fit-and-Fitnesse
 http://www.fitnesse.org/FitNesse.DotNet.DotNetFitServer
 NuGet package FitSharp
 
-NuGet package (Selenium) WebDriver & WebDrier.Support
+NuGet package (Selenium) WebDriver & WebDriver.Support
+
+In fitnesseApps, unzip fitsharp.release.2.3.net40.zip naar dotnet4 folder.
+Unzip FitLibrary over de Fitnesse folder (zie overeen komende folders)
+
 
 
