@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
-using OpenQA.Selenium.Support.UI;
 using Tahzoo.SeleniumCode.Properties;
 
 namespace Tahzoo.SeleniumCode.Samples
@@ -18,22 +10,14 @@ namespace Tahzoo.SeleniumCode.Samples
     {
         public void CallSeleniumServerWithFireFox()
         {
-            DesiredCapabilities capability = DesiredCapabilities.Firefox();
-
-            RemoteWebDriver driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), capability);
+            var driver = DriverClass.GetFirefoxServerDriver();
 
             RunCheeseLocatorExample(driver);
         }
 
         public void CallSeleniumServerWithChrome()
         {
-            DesiredCapabilities capability = DesiredCapabilities.Chrome();
-
-            // path to chrome driver set in the System env. Path.
-            // http://stackoverflow.com/a/15215657/200824
-            
-
-            RemoteWebDriver driver = new RemoteWebDriver( new Uri("http://localhost:4444/wd/hub"), capability);
+            var driver = DriverClass.GetChromeServerDriver();
 
             RunCheeseLocatorExample(driver);
         }
@@ -50,7 +34,7 @@ namespace Tahzoo.SeleniumCode.Samples
                 driver.SwitchTo().Window("windowName");
                 driver.FindElement(By.Id("CheesyButton")).Click();
 
-                WaitTillAlertIsPresent(driver);
+                Helper.WaitTillAlertIsPresent(driver);
 
                 driver.SwitchTo().Alert().Accept();
             }
@@ -63,12 +47,6 @@ namespace Tahzoo.SeleniumCode.Samples
             {
                 driver.Quit();
             }
-        }
-
-        private static void WaitTillAlertIsPresent(RemoteWebDriver driver)
-        {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            wait.Until(ExpectedConditions.AlertIsPresent());
         }
     }
 }

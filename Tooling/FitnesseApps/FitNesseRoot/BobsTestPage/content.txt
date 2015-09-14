@@ -2,7 +2,6 @@
 
 TestDivisionExampleInJava
 TestDivisionExampleInCsharp
-HelloWorld
 
 TestSearch4cheese
 TestWhereIsMyCheese

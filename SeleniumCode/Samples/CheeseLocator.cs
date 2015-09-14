@@ -13,7 +13,7 @@ namespace Tahzoo.SeleniumCode.Samples
         {
             try
             {
-                _driver = new FirefoxDriver();
+                _driver = DriverClass.GetFirefoxDriver();
 
                 _driver.Navigate().GoToUrl(url);
 

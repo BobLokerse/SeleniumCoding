@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using Tahzoo.SeleniumCode;
 using Tahzoo.SeleniumCode.Samples.PageObjects;
 
 namespace Tahzoo.FitnesseFixtures
@@ -7,19 +8,17 @@ namespace Tahzoo.FitnesseFixtures
     public class FixtureGooglePage :
         fit.ColumnFixture
     {
-        private IWebDriver _driver;
+        private readonly IWebDriver _driver;
         private GooglePage _googlePage;
 
-        protected FirefoxDriver GetFirefoxDriver()
+        public FixtureGooglePage()
         {
-            return new FirefoxDriver();
+            _driver = DriverClass.GetFirefoxDriver();
         }
 
 
         public void OpenPage(string homepage)
         {
-            _driver = GetFirefoxDriver();
-
             _googlePage= new GooglePage(_driver);
 
             _googlePage.OpenPage(homepage);
