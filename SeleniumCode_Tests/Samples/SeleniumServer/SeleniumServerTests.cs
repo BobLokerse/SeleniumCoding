@@ -13,7 +13,9 @@ namespace Tahzoo.SeleniumCode.Samples.Tests
         [TestMethod()]
         public void CallSeleniumServer_Test()
         {
-            new SeleniumServer().CallSeleniumServer();
+            new SeleniumServer().CallSeleniumServerWithFireFox();
+
+            new SeleniumServer().CallSeleniumServerWithChrome();
         }
     }
 }

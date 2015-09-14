@@ -64,7 +64,7 @@
     <Compile Include="Samples\CheeseSelectorTests.cs" />
     <Compile Include="Samples\GoogleSuggestTests.cs" />
     <Compile Include="Samples\PageObjectTests\GooglePagePageObjectTest.cs" />
-    <Compile Include="Samples\SeleniumServerTests.cs" />
+    <Compile Include="Samples\SeleniumServer\SeleniumServerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SeleniumCode\SeleniumCode.csproj">
