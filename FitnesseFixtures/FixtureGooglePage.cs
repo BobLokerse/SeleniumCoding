@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using Tahzoo.SeleniumCode;
+using Tahzoo.SeleniumCode.Helpers;
 using Tahzoo.SeleniumCode.Samples.PageObjects;
 
 namespace Tahzoo.FitnesseFixtures
@@ -13,7 +14,7 @@ namespace Tahzoo.FitnesseFixtures
 
         public FixtureGooglePage()
         {
-            _driver = DriverClass.GetFirefoxDriver();
+            _driver = Browser.GetFirefoxDriver();
         }
 
 

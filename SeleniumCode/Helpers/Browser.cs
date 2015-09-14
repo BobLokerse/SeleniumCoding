@@ -1,15 +1,24 @@
 ﻿using System;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
 using Tahzoo.SeleniumCode.Properties;
 
-namespace Tahzoo.SeleniumCode
+namespace Tahzoo.SeleniumCode.Helpers
 {
-    public class DriverClass
+    public class Browser
     {
-        public static FirefoxDriver GetFirefoxDriver()
+        private static IWebDriver _webDriver;
+
+        public static IWebDriver GetFirefoxDriver()
         {
-            return new FirefoxDriver();
+            _webDriver = new FirefoxDriver();
+            return _webDriver;
+        }
+
+        public IWebDriver Driver
+        {
+            get { return _webDriver; }
         }
 
         public static RemoteWebDriver GetFirefoxServerDriver()

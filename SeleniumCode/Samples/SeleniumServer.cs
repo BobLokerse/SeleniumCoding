@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using Tahzoo.SeleniumCode.Helpers;
 using Tahzoo.SeleniumCode.Properties;
 
 namespace Tahzoo.SeleniumCode.Samples
@@ -10,14 +11,14 @@ namespace Tahzoo.SeleniumCode.Samples
     {
         public void CallSeleniumServerWithFireFox()
         {
-            var driver = DriverClass.GetFirefoxServerDriver();
+            var driver = Browser.GetFirefoxServerDriver();
 
             RunCheeseLocatorExample(driver);
         }
 
         public void CallSeleniumServerWithChrome()
         {
-            var driver = DriverClass.GetChromeServerDriver();
+            var driver = Browser.GetChromeServerDriver();
 
             RunCheeseLocatorExample(driver);
         }
@@ -34,7 +35,7 @@ namespace Tahzoo.SeleniumCode.Samples
                 driver.SwitchTo().Window("windowName");
                 driver.FindElement(By.Id("CheesyButton")).Click();
 
-                Helper.WaitTillAlertIsPresent(driver);
+                WaitHelper.WaitTillAlertIsPresent(driver);
 
                 driver.SwitchTo().Alert().Accept();
             }

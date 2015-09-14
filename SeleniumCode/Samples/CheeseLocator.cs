@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using Tahzoo.SeleniumCode.Helpers;
 
 namespace Tahzoo.SeleniumCode.Samples
 {
@@ -13,7 +14,7 @@ namespace Tahzoo.SeleniumCode.Samples
         {
             try
             {
-                _driver = DriverClass.GetFirefoxDriver();
+                _driver = Browser.GetFirefoxDriver();
 
                 _driver.Navigate().GoToUrl(url);
 
