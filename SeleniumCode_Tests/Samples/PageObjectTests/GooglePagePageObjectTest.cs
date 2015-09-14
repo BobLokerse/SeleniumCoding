@@ -25,12 +25,12 @@ namespace Tahzoo.SeleniumCode_Tests.Samples.PageObjectTests
 
                 string searchTerm = "Manual testing is long";
 
-                GooglePage googlePage = new GooglePage();
+                GooglePage googlePage = new GooglePage(_driver);
 
-                googlePage.OpenPage(homepage, (FirefoxDriver) _driver);
-                googlePage.SearchFor(searchTerm, (FirefoxDriver) _driver);
-                googlePage.PageTitle((FirefoxDriver)_driver);
-                googlePage.Close((FirefoxDriver)_driver);
+                googlePage.OpenPage(homepage);
+                googlePage.SearchFor(searchTerm);
+                googlePage.PageTitle();
+                googlePage.Close();
             }
             finally
             {

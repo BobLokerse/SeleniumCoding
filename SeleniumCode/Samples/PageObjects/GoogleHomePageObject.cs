@@ -10,30 +10,38 @@ namespace Tahzoo.SeleniumCode.Samples.PageObjects
 
     public class GooglePage
     {
-        public void OpenPage(string homepage, IWebDriver driver)
+        private readonly IWebDriver _driver;
+
+        public GooglePage(IWebDriver driver)
         {
-            driver.Navigate().GoToUrl(homepage);
+            this._driver = driver;
         }
 
-        public void SearchFor(string searchTerm, IWebDriver driver)
+        public void OpenPage(string homepage)
         {
-            IWebElement query = driver.FindElement(By.Name("q"));
+            _driver.Navigate().GoToUrl(homepage);
+        }
+
+        public void SearchFor(string searchTerm)
+        {
+            IWebElement query = _driver.FindElement(By.Name("q"));
             query.SendKeys(searchTerm);
             query.Submit();
         }
 
-        public string PageTitle(IWebDriver driver)
+        public string PageTitle()
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
             wait.Until(d => d.Title.ToLower().EndsWith("search"));
 
-            return driver.Title;
+            return _driver.Title;
         }
 
-        public void Close(IWebDriver driver)
+        public void Close()
         {
-            driver.Close();
+            _driver.Close();
         }
+
 
     }
     

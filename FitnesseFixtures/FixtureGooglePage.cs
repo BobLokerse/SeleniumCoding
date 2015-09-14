@@ -4,33 +4,40 @@ using Tahzoo.SeleniumCode.Samples.PageObjects;
 
 namespace Tahzoo.FitnesseFixtures
 {
-    public class FixtureGooglePage : fit.ColumnFixture
+    public class FixtureGooglePage :
+        fit.ColumnFixture
     {
         private IWebDriver _driver;
         private GooglePage _googlePage;
 
+        protected FirefoxDriver GetFirefoxDriver()
+        {
+            return new FirefoxDriver();
+        }
+
+
         public void OpenPage(string homepage)
         {
-            _driver = new FirefoxDriver();
+            _driver = GetFirefoxDriver();
 
-            _googlePage= new GooglePage();
+            _googlePage= new GooglePage(_driver);
 
-            _googlePage.OpenPage(homepage, (FirefoxDriver) _driver);
+            _googlePage.OpenPage(homepage);
         }
 
         public void SearchFor(string searchTerm)
         {
-            _googlePage.SearchFor(searchTerm, (FirefoxDriver) _driver);
+            _googlePage.SearchFor(searchTerm);
         }
 
         public string PageTitle()
         {
-            return _googlePage.PageTitle((FirefoxDriver) _driver);
+            return _googlePage.PageTitle();
         }
 
         public void Close()
         {
-            _googlePage.Close((FirefoxDriver)_driver);
+            _googlePage.Close();
         }
     }
 }
