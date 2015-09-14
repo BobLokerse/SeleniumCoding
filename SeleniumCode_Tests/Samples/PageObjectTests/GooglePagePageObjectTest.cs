@@ -25,14 +25,12 @@ namespace Tahzoo.SeleniumCode_Tests.Samples.PageObjectTests
 
                 string searchTerm = "Manual testing is long";
 
-                GooglePage pageObject = new GooglePage();
+                GooglePage googlePage = new GooglePage();
 
-                pageObject.OpenPage(homepage, (FirefoxDriver) _driver);
-                pageObject.SearchFor(searchTerm, (FirefoxDriver) _driver);
-                
-                // Does not work yet
-                // http://stackoverflow.com/questions/12082946/selenium-webdriver-org-openqa-selenium-elementnotvisibleexception-element-is-n
-                //pageObject.ClickSearch((FirefoxDriver) _driver);
+                googlePage.OpenPage(homepage, (FirefoxDriver) _driver);
+                googlePage.SearchFor(searchTerm, (FirefoxDriver) _driver);
+                googlePage.PageTitle((FirefoxDriver)_driver);
+                googlePage.Close((FirefoxDriver)_driver);
             }
             finally
             {

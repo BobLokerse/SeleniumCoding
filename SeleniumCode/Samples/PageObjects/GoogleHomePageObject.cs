@@ -15,14 +15,14 @@ namespace Tahzoo.SeleniumCode.Samples.PageObjects
             driver.Navigate().GoToUrl(homepage);
         }
 
-        public void SearchFor(string searchTerm, FirefoxDriver driver)
+        public void SearchFor(string searchTerm, IWebDriver driver)
         {
             IWebElement query = driver.FindElement(By.Name("q"));
             query.SendKeys(searchTerm);
             query.Submit();
         }
 
-        public string PageTitle(FirefoxDriver driver)
+        public string PageTitle(IWebDriver driver)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             wait.Until(d => d.Title.ToLower().EndsWith("search"));
@@ -30,7 +30,7 @@ namespace Tahzoo.SeleniumCode.Samples.PageObjects
             return driver.Title;
         }
 
-        public void Close(FirefoxDriver driver)
+        public void Close(IWebDriver driver)
         {
             driver.Close();
         }
