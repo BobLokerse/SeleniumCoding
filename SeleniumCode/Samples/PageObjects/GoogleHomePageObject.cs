@@ -41,7 +41,7 @@ namespace Tahzoo.SeleniumCode.Samples.PageObjects
 
         public string PageTitle()
         {
-            WaitHelper.WaitUntilCondition(d => d.Title.ToLower().EndsWith("search"), _driver);
+            WaitHelper.WaitUntilCondition(d => d.Title.ToLower().Contains("google"), _driver);
 
             return _driver.Title;
         }
