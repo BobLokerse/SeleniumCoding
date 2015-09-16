@@ -80,6 +80,7 @@
     <Compile Include="FixtureSearch4Cheese.cs" />
     <Compile Include="FixtureWhereIsMyCheese.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Fixtures\CheeseLocatorWithSeleniumServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

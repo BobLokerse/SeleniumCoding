@@ -23,7 +23,7 @@ namespace Tahzoo.SeleniumCode.Samples
             RunCheeseLocatorExample(driver);
         }
 
-        private static void RunCheeseLocatorExample(RemoteWebDriver driver)
+        public static void RunCheeseLocatorExample(RemoteWebDriver driver)
         {
             try
             {
