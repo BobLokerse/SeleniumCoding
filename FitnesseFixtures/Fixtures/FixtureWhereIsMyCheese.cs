@@ -2,7 +2,7 @@
 using Tahzoo.SeleniumCode.Properties;
 using Tahzoo.SeleniumCode.Samples;
 
-namespace Tahzoo.FitnesseFixtures
+namespace Tahzoo.FitnesseFixtures.Fixtures
 {
     public class FixtureWhereIsMyCheese : fit.ColumnFixture
     {

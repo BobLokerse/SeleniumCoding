@@ -1,6 +1,6 @@
 ﻿using Tahzoo.SeleniumCode.Samples;
 
-namespace Tahzoo.FitnesseFixtures
+namespace Tahzoo.FitnesseFixtures.Fixtures
 {
     public class FixtureSearch4Cheese : fit.ColumnFixture
     {
