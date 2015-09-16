@@ -20,6 +20,9 @@ namespace Tahzoo.SeleniumCode.Samples.PageObjects
         [FindsBy(How = How.Name, Using = "q")]
         public IWebElement SearchBox { get; set; }
 
+        [FindsBy(How = How.Name, Using = "btnI")]
+        public IWebElement LuckyButton { get; set; }
+
         public GooglePage(IWebDriver driver)
         {
             this._driver = driver;
@@ -36,7 +39,16 @@ namespace Tahzoo.SeleniumCode.Samples.PageObjects
         public void SearchFor(string searchTerm)
         {
             SearchBox.SendKeys(searchTerm);
+        }
+
+        public void ClickSearch()
+        {
             SearchBox.Submit();
+        }
+
+        public void ClickLuckyButton()
+        {
+            LuckyButton.Click();
         }
 
         public string PageTitle()

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Tahzoo.SeleniumCode.Samples;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-namespace Tahzoo.SeleniumCode.Samples.Tests
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace Tahzoo.SeleniumCode_Tests.Samples.SeleniumServer
 {
     [TestClass()]
     public class SeleniumServerTests
@@ -14,9 +9,9 @@ namespace Tahzoo.SeleniumCode.Samples.Tests
         [Ignore]
         public void CallSeleniumServer_Test()
         {
-            new SeleniumServer().CallSeleniumServerWithFireFox();
+            new SeleniumCode.Samples.SeleniumServer().CallSeleniumServerWithFireFox();
 
-            new SeleniumServer().CallSeleniumServerWithChrome();
+            new SeleniumCode.Samples.SeleniumServer().CallSeleniumServerWithChrome();
         }
     }
 }

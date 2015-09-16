@@ -7,6 +7,7 @@ namespace Tahzoo.FitnesseFixtures.Fixtures
     public class FixtureGooglePage :
         fit.ColumnFixture
     {
+        #region Fields and Constructor
         private readonly IWebDriver _driver;
         private GooglePage _googlePage;
 
@@ -14,6 +15,7 @@ namespace Tahzoo.FitnesseFixtures.Fixtures
         {
             _driver = Browser.GetFirefoxDriver();
         }
+        #endregion
 
 
         public void OpenPage(string homepage)
@@ -26,6 +28,16 @@ namespace Tahzoo.FitnesseFixtures.Fixtures
         public void SearchFor(string searchTerm)
         {
             _googlePage.SearchFor(searchTerm);
+        }
+
+        public void ClickSearchButton()
+        {
+            _googlePage.ClickSearch();
+        }
+
+        public void ClickLuckyButton()
+        {
+            _googlePage.ClickLuckyButton();
         }
 
         public string PageTitle()
