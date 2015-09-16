@@ -76,11 +76,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FixtureGooglePage.cs" />
-    <Compile Include="FixtureSearch4Cheese.cs" />
-    <Compile Include="FixtureWhereIsMyCheese.cs" />
+    <Compile Include="Fixtures\FixtureGooglePageWithServer.cs" />
+    <Compile Include="Fixtures\FixtureGooglePage.cs" />
+    <Compile Include="Fixtures\FixtureSearch4Cheese.cs" />
+    <Compile Include="Fixtures\FixtureWhereIsMyCheese.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Fixtures\CheeseLocatorWithSeleniumServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
