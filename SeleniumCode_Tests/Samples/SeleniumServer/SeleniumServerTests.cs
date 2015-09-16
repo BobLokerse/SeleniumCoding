@@ -11,6 +11,7 @@ namespace Tahzoo.SeleniumCode.Samples.Tests
     public class SeleniumServerTests
     {
         [TestMethod()]
+        [Ignore]
         public void CallSeleniumServer_Test()
         {
             new SeleniumServer().CallSeleniumServerWithFireFox();
