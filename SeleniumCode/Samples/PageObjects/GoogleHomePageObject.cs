@@ -1,7 +1,5 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using OpenQA.Selenium.Support.UI;
 using Tahzoo.SeleniumCode.Helpers;
 
 
@@ -17,11 +15,14 @@ namespace Tahzoo.SeleniumCode.Samples.PageObjects
         /// Define a property for the search box on the Google page, for clearer use.
         /// The annotation holds the  actual name of the html element.
         /// </summary>
+        /// <remarks>
+        /// See Selenium info on PageFactory: https://code.google.com/p/selenium/wiki/PageFactory
+        /// </remarks>
         [FindsBy(How = How.Name, Using = "q")]
-        public IWebElement SearchBox { get; set; }
+        protected IWebElement SearchBox { get; set; }
 
         [FindsBy(How = How.Name, Using = "btnI")]
-        public IWebElement LuckyButton { get; set; }
+        protected IWebElement LuckyButton { get; set; }
 
         public GooglePage(IWebDriver driver)
         {
