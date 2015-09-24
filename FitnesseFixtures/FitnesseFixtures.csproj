@@ -80,8 +80,11 @@
     <Compile Include="Fixtures\Fit\FixtureGooglePage.cs" />
     <Compile Include="Fixtures\Fit\FixtureSearch4Cheese.cs" />
     <Compile Include="Fixtures\Fit\FixtureWhereIsMyCheese.cs" />
+    <Compile Include="Fixtures\Slim\BasicMathTest.cs" />
     <Compile Include="Fixtures\Slim\FixtureGooglePage.cs" />
     <Compile Include="Fixtures\Slim\FixtureSearch4Cheese.cs" />
+    <Compile Include="Fixtures\Slim\IntMultiplier.cs" />
+    <Compile Include="Fixtures\Slim\ProjectVersion.cs" />
     <Compile Include="Fixtures\Slim\ShouldIBuyMilk.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
