@@ -86,6 +86,7 @@
     <Compile Include="Fixtures\Slim\IntMultiplier.cs" />
     <Compile Include="Fixtures\Slim\ProjectVersion.cs" />
     <Compile Include="Fixtures\Slim\ShouldIBuyMilk.cs" />
+    <Compile Include="PmTool\TestPmtoolLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
