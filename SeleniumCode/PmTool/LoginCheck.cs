@@ -38,6 +38,26 @@ namespace Tahzoo.SeleniumCode.PmTool
             return error.Text == "Failed to log you in. Try again or contact an administrator.";
         }
 
+        public bool TestCorrectLogin(string username, string password)
+        {
+            _driver.Navigate().GoToUrl("http://test.hajime.site/");
+
+            IWebElement loginBox = _driver.FindElement(By.Id("username"));
+            IWebElement passwordBox = _driver.FindElement(By.Id("password"));
+
+            loginBox.SendKeys(username);
+            passwordBox.SendKeys(password);
+
+            IWebElement button = _driver.FindElement(By.CssSelector("button[type=submit]"));
+            button.Click();
+
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(15));
+            wait.Until((d) => d.FindElement(By.Id("opportunitySearchText")).Displayed);
+
+            return true;
+        }
+
+
         public void Dispose()
         {
             if (_driver != null)

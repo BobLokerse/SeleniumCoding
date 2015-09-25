@@ -26,11 +26,22 @@ namespace Tahzoo.FitnesseFixtures.PmTool
 
         public string Password { get; set; }
 
-        public bool CanLogin()
+        public bool CannotLogin()
         {
             using (var login = new LoginCheck(_browser))
             {
                 return login.TestFailedLogin(Username ?? "", Password ?? "");
+            }
+        }
+
+        public bool CanLoginWithFixedUidPwd()
+        {
+            const string username = "pmtooltester";
+            const string password = "AT9t6V9:";
+
+            using (var login = new LoginCheck(_browser))
+            {
+                return login.TestCorrectLogin(username, password);
             }
         }
     }
