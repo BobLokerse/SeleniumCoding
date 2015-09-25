@@ -21,40 +21,54 @@ namespace Tahzoo.SeleniumCode.PmTool
         {
             _driver.Navigate().GoToUrl("http://test.hajime.site/");
 
-            IWebElement loginBox = _driver.FindElement(By.Id("username"));
-            IWebElement passwordBox = _driver.FindElement(By.Id("password"));
+            var page = new PageObjects.LoginPage(_driver);
+            page.SetUsername(username);
+            page.SetPassword(password);
 
-            loginBox.SendKeys(username);
-            passwordBox.SendKeys(password);
+            try
+            {
+                var result = page.LoginExpectingFailure(); // expect: result == page
+                return result.GetErrorMessage().Contains("Failed");
+                // "Failed to log you in. Try again or contact an administrator.";
 
-            IWebElement button = _driver.FindElement(By.CssSelector("button[type=submit]"));
-            button.Click();
-
-            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(15));
-            wait.Until((d) => d.FindElement(By.ClassName("errorMessage")).Displayed);
-
-            IWebElement error = _driver.FindElement(By.ClassName("errorMessage"));
-
-            return error.Text == "Failed to log you in. Try again or contact an administrator.";
+            }
+            catch (WebDriverTimeoutException)
+            {
+                // probably the login succeeded and the Opportunities pages is shown
+                return false;
+            }
         }
 
         public bool TestCorrectLogin(string username, string password)
         {
             _driver.Navigate().GoToUrl("http://test.hajime.site/");
 
-            IWebElement loginBox = _driver.FindElement(By.Id("username"));
-            IWebElement passwordBox = _driver.FindElement(By.Id("password"));
+            var page = new PageObjects.LoginPage(_driver);
+            page.SetUsername(username);
+            page.SetPassword(password);
 
-            loginBox.SendKeys(username);
-            passwordBox.SendKeys(password);
+            try
+            {
+                var resultpage = page.LoginExpectingSuccess();
+                return !ReferenceEquals(resultpage, page);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
 
-            IWebElement button = _driver.FindElement(By.CssSelector("button[type=submit]"));
-            button.Click();
+            //IWebElement loginBox = _driver.FindElement(By.Id("username"));
+            //IWebElement passwordBox = _driver.FindElement(By.Id("password"));
 
-            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(15));
-            wait.Until((d) => d.FindElement(By.Id("opportunitySearchText")).Displayed);
+            //loginBox.SendKeys(username);
+            //passwordBox.SendKeys(password);
 
-            return true;
+            //IWebElement button = _driver.FindElement(By.CssSelector("button[type=submit]"));
+            //button.Click();
+
+            //WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(15));
+            //wait.Until((d) => d.FindElement(By.Id("opportunitySearchText")).Displayed);
+
         }
 
 
