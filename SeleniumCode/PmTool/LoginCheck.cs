@@ -50,27 +50,13 @@ namespace Tahzoo.SeleniumCode.PmTool
             try
             {
                 var resultpage = page.LoginExpectingSuccess();
-                return !ReferenceEquals(resultpage, page);
+                return true;
             }
-            catch (Exception)
+            catch (WebDriverTimeoutException)
             {
                 return false;
             }
-
-            //IWebElement loginBox = _driver.FindElement(By.Id("username"));
-            //IWebElement passwordBox = _driver.FindElement(By.Id("password"));
-
-            //loginBox.SendKeys(username);
-            //passwordBox.SendKeys(password);
-
-            //IWebElement button = _driver.FindElement(By.CssSelector("button[type=submit]"));
-            //button.Click();
-
-            //WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(15));
-            //wait.Until((d) => d.FindElement(By.Id("opportunitySearchText")).Displayed);
-
         }
-
 
         public void Dispose()
         {
