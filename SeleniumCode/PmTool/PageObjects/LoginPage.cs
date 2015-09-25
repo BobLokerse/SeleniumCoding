@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
@@ -16,21 +12,23 @@ namespace Tahzoo.SeleniumCode.PmTool.PageObjects
         public LoginPage(IWebDriver driver)
         {
             _driver = driver;
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
+            wait.Until(d => d.FindElement(By.Id("username")) != null);
             PageFactory.InitElements(_driver, this);
         }
 
 
         [FindsBy(How = How.Id, Using = "username")]
-        public IWebElement LoginElement { get; set; }
+        private IWebElement LoginElement { get; set; }
 
         [FindsBy(How = How.Id, Using = "password")]
-        public IWebElement PasswordElement { get; set; }
+        private IWebElement PasswordElement { get; set; }
 
         [FindsBy(How = How.CssSelector, Using = "button[type=submit]")]
-        public IWebElement SubmitButton { get; set; }
+        private IWebElement SubmitButton { get; set; }
 
         [FindsBy(How = How.ClassName, Using = "errorMessage")]
-        public IWebElement ErrorMessage { get; set; }
+        private IWebElement ErrorMessage { get; set; }
 
         public void SetUsername(string name)
         {
@@ -42,20 +40,20 @@ namespace Tahzoo.SeleniumCode.PmTool.PageObjects
             PasswordElement.SendKeys(secret);
         }
 
-        public OpportunitiesListPage LoginExpectingSuccess()
+        public OpportunitiesBasicPage LoginExpectingSuccess()
         {
             SubmitButton.Click();
             WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
             wait.Until(d => d.FindElement(By.Id("opportunitySearchText")).Displayed);
 
-            return new OpportunitiesListPage(_driver);
+            return new OpportunitiesBasicPage(_driver);
         }
 
         public LoginPage LoginExpectingFailure()
         {
             SubmitButton.Click();
             WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
-            // note: the errormessage is misused to show a "busy" icon while checking against the server
+            // note: the errormessage is abused to show a "busy" icon while checking against the server, so it will always show
             wait.Until(d =>
             {
                 var elt = d.FindElement(By.ClassName("errorMessage"));

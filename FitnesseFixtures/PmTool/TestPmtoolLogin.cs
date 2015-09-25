@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tahzoo.SeleniumCode.PmTool;
 
 namespace Tahzoo.FitnesseFixtures.PmTool
@@ -10,6 +6,9 @@ namespace Tahzoo.FitnesseFixtures.PmTool
     public class TestPmtoolLogin
     {
         private Browser _browser = Browser.Firefox;
+
+        internal const string TestUsername = "pmtooltester";
+        internal const string TestPassword = "AT9t6V9:";
 
         public void SetBrowser(string browserName)
         {
@@ -34,14 +33,11 @@ namespace Tahzoo.FitnesseFixtures.PmTool
             }
         }
 
-        public bool CanLoginWithFixedUidPwd()
+        public bool CanLoginWithFixedCredentials()
         {
-            const string username = "pmtooltester";
-            const string password = "AT9t6V9:";
-
             using (var login = new LoginCheck(_browser))
             {
-                return login.TestCorrectLogin(username, password);
+                return login.TestCorrectLogin(TestUsername, TestPassword);
             }
         }
     }

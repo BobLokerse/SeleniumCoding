@@ -58,8 +58,10 @@
     <Compile Include="PmTool\Browser.cs" />
     <Compile Include="PmTool\DriverFactory.cs" />
     <Compile Include="PmTool\LoginCheck.cs" />
+    <Compile Include="PmTool\OpportunityPageTester.cs" />
     <Compile Include="PmTool\PageObjects\LoginPage.cs" />
-    <Compile Include="PmTool\PageObjects\OpportunitiesListPage.cs" />
+    <Compile Include="PmTool\PageObjects\OpportunitiesBasicPage.cs" />
+    <Compile Include="PmTool\PageObjects\OpportunitiesDetailsPage.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>

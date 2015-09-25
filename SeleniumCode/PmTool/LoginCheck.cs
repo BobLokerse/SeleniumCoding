@@ -10,6 +10,8 @@ namespace Tahzoo.SeleniumCode.PmTool
 {
     public sealed class LoginCheck : IDisposable
     {
+        internal const string TestSiteUrl = "http://test.hajime.site/";
+
         private readonly IWebDriver _driver;
 
         public LoginCheck(Browser browser)
@@ -19,7 +21,7 @@ namespace Tahzoo.SeleniumCode.PmTool
 
         public bool TestFailedLogin(string username, string password)
         {
-            _driver.Navigate().GoToUrl("http://test.hajime.site/");
+            _driver.Navigate().GoToUrl(TestSiteUrl);
 
             var page = new PageObjects.LoginPage(_driver);
             page.SetUsername(username);
@@ -41,7 +43,7 @@ namespace Tahzoo.SeleniumCode.PmTool
 
         public bool TestCorrectLogin(string username, string password)
         {
-            _driver.Navigate().GoToUrl("http://test.hajime.site/");
+            _driver.Navigate().GoToUrl(TestSiteUrl);
 
             var page = new PageObjects.LoginPage(_driver);
             page.SetUsername(username);
