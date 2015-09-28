@@ -57,7 +57,7 @@ namespace Tahzoo.SeleniumCode.PmTool.PageObjects
         public OpportunitiesDetailsPage GoToDetailsPage(string opportunityName)
         {
             EnterSearch(opportunityName);
-
+            Support.Waiter.WaitForElement(_driver, By.CssSelector("div.col-lg-3 .list-group.ng-scope a"));
             var link = Opportunities.First();
             link.Click();
             return new OpportunitiesDetailsPage(_driver);

@@ -1,6 +1,7 @@
 ﻿using System;
 using Tahzoo.SeleniumCode.PmTool;
 using Tahzoo.SeleniumCode.PmTool.PageObjects;
+// ReSharper disable UnusedMember.Global
 
 namespace Tahzoo.FitnesseFixtures.PmTool
 {
