@@ -26,8 +26,7 @@ namespace Tahzoo.SeleniumCode.PmTool.PageObjects
         [FindsBy(How = How.Id, Using = "opportunitySearchText")]
         protected IWebElement SearchBox { get; set; }
 
-        // TODO put nice id around this list
-        [FindsBy(How = How.CssSelector, Using = "div.col-lg-3 .list-group.ng-scope a")]
+        [FindsBy(How = How.CssSelector, Using = "#opportunity-list a")]
         protected IList<IWebElement> Opportunities { get; set; }
 
         public void EnterSearch(string searchText)
@@ -57,7 +56,7 @@ namespace Tahzoo.SeleniumCode.PmTool.PageObjects
         public OpportunitiesDetailsPage GoToDetailsPage(string opportunityName)
         {
             EnterSearch(opportunityName);
-            Support.Waiter.WaitForElement(_driver, By.CssSelector("div.col-lg-3 .list-group.ng-scope a"));
+            Support.Waiter.WaitForElement(_driver, By.CssSelector("#opportunity-list a"));
             var link = Opportunities.First();
             link.Click();
             return new OpportunitiesDetailsPage(_driver);

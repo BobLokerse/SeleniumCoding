@@ -11,6 +11,7 @@ namespace Tahzoo.FitnesseFixtures.PmTool
 
         private OpportunityPageTester _tester;
         private OpportunitiesBasicPage _opportunityPage;
+        private OpportunitiesDetailsPage _opportunitiesDetails;
 
         public void SetBrowser(string browserName)
         {
@@ -39,8 +40,13 @@ namespace Tahzoo.FitnesseFixtures.PmTool
 
         public bool GoToDetailsPage(string name)
         {
-            var pg = _opportunityPage.GoToDetailsPage(name);
-            return pg.GetTitle().Contains("detail");
+            _opportunitiesDetails = _opportunityPage.GoToDetailsPage(name);
+            return _opportunitiesDetails.GetTitle().Contains("detail");
+        }
+
+        public int CountItcs()
+        {
+            return _opportunitiesDetails.CountItcs();
         }
 
         public void CloseBrowser()
