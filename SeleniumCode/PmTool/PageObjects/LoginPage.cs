@@ -12,8 +12,7 @@ namespace Tahzoo.SeleniumCode.PmTool.PageObjects
         public LoginPage(IWebDriver driver)
         {
             _driver = driver;
-            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
-            wait.Until(d => d.FindElement(By.Id("username")) != null);
+            Support.Waiter.WaitForElement(_driver, By.Id("username"), 5);
             PageFactory.InitElements(_driver, this);
         }
 
@@ -43,8 +42,7 @@ namespace Tahzoo.SeleniumCode.PmTool.PageObjects
         public OpportunitiesBasicPage LoginExpectingSuccess()
         {
             SubmitButton.Click();
-            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
-            wait.Until(d => d.FindElement(By.Id("opportunitySearchText")).Displayed);
+            Support.Waiter.WaitForElement(_driver, By.Id("opportunitySearchText"));
 
             return new OpportunitiesBasicPage(_driver);
         }
@@ -52,13 +50,12 @@ namespace Tahzoo.SeleniumCode.PmTool.PageObjects
         public LoginPage LoginExpectingFailure()
         {
             SubmitButton.Click();
-            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
             // note: the errormessage is abused to show a "busy" icon while checking against the server, so it will always show
-            wait.Until(d =>
-            {
-                var elt = d.FindElement(By.ClassName("errorMessage"));
-                return elt.Displayed && elt.Text.Contains("Failed");
-            });
+            Support.Waiter.WaitForExpression(_driver, d =>
+                                                        {
+                                                            var elt = d.FindElement(By.ClassName("errorMessage"));
+                                                            return elt.Displayed && elt.Text.Contains("Failed");
+                                                        });
 
             return this;
         }

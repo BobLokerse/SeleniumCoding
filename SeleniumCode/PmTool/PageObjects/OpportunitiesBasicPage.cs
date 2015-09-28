@@ -18,8 +18,8 @@ namespace Tahzoo.SeleniumCode.PmTool.PageObjects
         public OpportunitiesBasicPage(IWebDriver driver)
         {
             _driver = driver;
-            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
-            wait.Until(d => d.FindElement(By.Id("opportunitySearchText")) != null);
+            Support.Waiter.WaitForElement(_driver, By.Id("opportunitySearchText"), 5);
+
             PageFactory.InitElements(_driver, this);
         }
 

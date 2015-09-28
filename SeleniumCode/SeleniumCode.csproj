@@ -62,6 +62,7 @@
     <Compile Include="PmTool\PageObjects\LoginPage.cs" />
     <Compile Include="PmTool\PageObjects\OpportunitiesBasicPage.cs" />
     <Compile Include="PmTool\PageObjects\OpportunitiesDetailsPage.cs" />
+    <Compile Include="PmTool\Support\Waiter.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>

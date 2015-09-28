@@ -6,6 +6,9 @@ using OpenQA.Selenium.Support.UI;
 
 namespace Tahzoo.SeleniumCode.PmTool.PageObjects
 {
+    /// <summary>
+    /// Page object for opportunity page, with a detail selected
+    /// </summary>
     public class OpportunitiesDetailsPage : OpportunitiesBasicPage
     {
         public OpportunitiesDetailsPage(IWebDriver driver)
@@ -18,6 +21,7 @@ namespace Tahzoo.SeleniumCode.PmTool.PageObjects
 
         public string GetTitle()
         {
+            Support.Waiter.WaitForElement(_driver, By.CssSelector("div[ui-view=right] h3"));
             return PanelTitle.Text;
         }
     }
