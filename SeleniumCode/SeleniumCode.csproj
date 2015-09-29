@@ -59,6 +59,7 @@
     <Compile Include="PmTool\DriverFactory.cs" />
     <Compile Include="PmTool\LoginCheck.cs" />
     <Compile Include="PmTool\OpportunityPageTester.cs" />
+    <Compile Include="PmTool\PageObjects\ItcDetailsPage.cs" />
     <Compile Include="PmTool\PageObjects\LoginPage.cs" />
     <Compile Include="PmTool\PageObjects\OpportunitiesBasicPage.cs" />
     <Compile Include="PmTool\PageObjects\OpportunitiesDetailsPage.cs" />

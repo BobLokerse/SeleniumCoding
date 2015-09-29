@@ -12,6 +12,7 @@ namespace Tahzoo.FitnesseFixtures.PmTool
         private OpportunityPageTester _tester;
         private OpportunitiesBasicPage _opportunityPage;
         private OpportunitiesDetailsPage _opportunitiesDetails;
+        private ItcDetailsPage _itcDetails;
 
         public void SetBrowser(string browserName)
         {
@@ -47,6 +48,15 @@ namespace Tahzoo.FitnesseFixtures.PmTool
         public int CountItcs()
         {
             return _opportunitiesDetails.CountItcs();
+        }
+
+        /// <summary>
+        /// Go to edit page of selected ITC 
+        /// </summary>
+        /// <param name="index">The index in the list (1-based)</param>
+        public void EditItc(int index)
+        {
+            _itcDetails = _opportunitiesDetails.SelectItc(index);
         }
 
         public void CloseBrowser()

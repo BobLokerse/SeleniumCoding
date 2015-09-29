@@ -21,7 +21,7 @@ namespace Tahzoo.SeleniumCode.PmTool.PageObjects
         private IWebElement PanelTitle { get; set; }
 
         [FindsBy(How = How.CssSelector, Using = "table#opportunity-itc-list tbody tr")]
-        private IList<IWebElement> Itcs { get; set; } 
+        private IList<IWebElement> Itcs { get; set; }
 
         public string GetTitle()
         {
@@ -38,7 +38,7 @@ namespace Tahzoo.SeleniumCode.PmTool.PageObjects
             {
                 return Itcs.Count;
             }
-            catch 
+            catch
             {
                 if (_driver is EdgeDriver)
                 {
@@ -48,6 +48,13 @@ namespace Tahzoo.SeleniumCode.PmTool.PageObjects
 
                 throw;
             }
+        }
+
+        public ItcDetailsPage SelectItc(int index)
+        {
+            var editbtn = _driver.FindElement(By.CssSelector("#opportunity-itc-list tbody tr:nth-of-type(" + index + ") a:first-of-type"));
+            editbtn.Click();
+            return new ItcDetailsPage(_driver);
         }
     }
 }
